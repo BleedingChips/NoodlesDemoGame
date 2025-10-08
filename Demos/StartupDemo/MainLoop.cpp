@@ -33,7 +33,7 @@ protected:
 
 auto dying = AutoSystemNodeStatic(
 	[]() {
-		Potato::Log::Log<"Dying">(Potato::Log::Level::Log, "DyingSystemNode");
+		Potato::Log::Log<u8"Dying">(Potato::Log::Level::Log, "DyingSystemNode");
 	}
 );
 
@@ -48,8 +48,6 @@ struct Pipeline
 
 int main()
 {
-
-
 
 	Dumpling::Color color = {1.0f, 1.0f, 1.0f, 1.0f};
 	Dumpling::Color new_color{ color };
@@ -165,6 +163,7 @@ int main()
 				{
 					auto entity = context.GetInstance().CreateEntity();
 					auto form = render->CreateForm();
+
 					auto im_hud = render->CreateIGHUD(form, &demo);
 					context.GetInstance().AddEntityComponent(*entity, std::move(form));
 					context.GetInstance().AddEntityComponent(*entity, std::move(im_hud));
