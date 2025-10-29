@@ -131,8 +131,8 @@ int main()
 						new_color.G = std::abs(new_color.G - 1.0f);
 						new_color.B = std::abs(new_color.B - 1.0f);
 
-						auto p1 = pipeline->parameter->TryGetMemberDataWithStaticCast<MapoToufu::CleanViewTargetPass::Property>(0);
-						auto p2 = pipeline->parameter->TryGetMemberDataWithStaticCast<MapoToufu::IGHUDPass::Property>(1);
+						auto p1 = pipeline->parameter->MemberAs<MapoToufu::CleanViewTargetPass::Property>(0);
+						auto p2 = pipeline->parameter->MemberAs<MapoToufu::IGHUDPass::Property>(1);
 
 						p1->clean_color[0] = new_color;
 						p1->target.Clear();
